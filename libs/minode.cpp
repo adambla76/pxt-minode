@@ -100,6 +100,15 @@ namespace minode {
 	    pRGB->setRGB(red,green,blue);
 	}
 
+    //% 
+	void HSLSetColor(ConnName connName , int hue, int satur, int light){
+	    MiNodeRGB* pRGB;
+
+	    pRGB = node.rgb.attach(connName);
+	    pRGB->setHSL(hue,satur,light);
+	}
+
+
 	//%
   	int DHTGetTemperature(ConnName connName , DHTTemStyle style){
    	  MiNodeDHT* pDHT11;

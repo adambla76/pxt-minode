@@ -9,8 +9,8 @@ namespace minode {
      */
     //% blockId=get_pin_name
     //% shim=minode::getPin
-    export function getPin(connName: ConnName): number{
-      return 0;
+    export function getPin(connName: ConnName): number {
+        return 0;
     }
 
     /**
@@ -18,8 +18,8 @@ namespace minode {
      */
     //% blockId=get_analog_pin_name
     //% shim=minode::getanalogPin
-    export function getanalogPin(connName: AnalogConnName): number{
-      return 0;
+    export function getanalogPin(connName: AnalogConnName): number {
+        return 0;
     }
 
     /**
@@ -27,8 +27,8 @@ namespace minode {
      */
     //% blockId=get_pin_property
     //% shim=minode::getPinProperty
-    export function getPinProperty(connName: ConnName): number{
-      return 0;
+    export function getPinProperty(connName: ConnName): number {
+        return 0;
     }
 
     /**
@@ -46,17 +46,28 @@ namespace minode {
     //% blockId=minode_rgb_setcolor block="rgb led %connName| set red %red| green %green| blue %blue"
     //% advanced=true
     //% shim=minode::RGBSetColor
-    export function RGBSetColor(connName: ConnName, red: number, green: number, blue: number): void{
-    	return;
+    export function RGBSetColor(connName: ConnName, red: number, green: number, blue: number): void {
+        return;
     }
+
+    /**
+       * Converts HSL channels into a RGB color.
+       */
+    //% blockId=minode_hsl_setcolor block="hsl led %connName| set hue %hue| saturation %satur| lightness %light"
+    //% advanced=true
+    //% shim=minode::HSLSetColor
+    export function HSLSetColor(connName: ConnName, hue: number, satur: number, light: number): void {
+        return;
+    }
+
 
     /**
      * Get DHT11 temperature (celsius or fahrenheit).
      */
     //% blockId=minode_dht_get_temperature block="dht11 %connName| tempreature %FanStatus" 
     //% shim=minode::DHTGetTemperature
-    export function DHTGetTemperature(connName: ConnName, style: DHTTemStyle): number{
-      return 0;
+    export function DHTGetTemperature(connName: ConnName, style: DHTTemStyle): number {
+        return 0;
     }
 
     /**
@@ -65,8 +76,8 @@ namespace minode {
     //% blockId=minode_dht_get_humidity block="dht11 %connName| humidity"
     //% advanced=true
     //% shim=minode::DHTGetHumidity
-    export function DHTGetHumidity(connName: ConnName): number{
-      return 0;
+    export function DHTGetHumidity(connName: ConnName): number {
+        return 0;
     }
 
     /**
@@ -75,8 +86,8 @@ namespace minode {
     //% blockId=minode_on_dhttemperature_change block="dht11 %connName| on temperature change"
     //% advanced=true
     //% shim=minode::onDHTEvent
-    export function onDHTEvent(connName: ConnName, body: () => void): void{
-    	return;
+    export function onDHTEvent(connName: ConnName, body: () => void): void {
+        return;
     }
 
     /**
@@ -87,8 +98,8 @@ namespace minode {
      */
     //% blockId=minode_on_switch_event block="switch %connName| on %event"
     //% shim=minode::onSwitchEvent
-    export function onSwitchEvent(connName: ConnName, event: SwitchEvent, body: () => void): void{
-    	return;
+    export function onSwitchEvent(connName: ConnName, event: SwitchEvent, body: () => void): void {
+        return;
     }
 
     /**
@@ -97,8 +108,8 @@ namespace minode {
     //% blockId=minode_switch_is_opened block="switch %connName| is opened"
     //% advanced=true
     //% shim=minode::switchIsOpened
-    export function switchIsOpened(connName: ConnName): boolean{
-      return true;
+    export function switchIsOpened(connName: ConnName): boolean {
+        return true;
     }
 
     /**
@@ -106,8 +117,8 @@ namespace minode {
      */
     //% blockId=minode_on_ROTARY_CHANGE block="rotary %connName| on trigger"
     //% shim=minode::onRotaryEvent
-    export function onRotaryEvent(connName: AnalogConnName, body: () => void): void{
-    	return;
+    export function onRotaryEvent(connName: AnalogConnName, body: () => void): void {
+        return;
     }
 
     /**
@@ -116,8 +127,8 @@ namespace minode {
     //% blockId=minode_ROTARY_GET_Percentage block="rotary %connName| get Percentage"
     //% advanced=true
     //% shim=minode::RotaryGetPercentage
-    export function RotaryGetPercentage(connName: AnalogConnName): number{
-      return 0;
+    export function RotaryGetPercentage(connName: AnalogConnName): number {
+        return 0;
     }
 
     /**
@@ -126,8 +137,8 @@ namespace minode {
     //% blockId=minode_on_PIR_trig block="pir %connName| on trigger"
     //% shim=minode::onPIREvent
     //% advanced=true
-    export function onPIREvent(connName: ConnName, body: () => void): void{
-    	return;
+    export function onPIREvent(connName: ConnName, body: () => void): void {
+        return;
     }
 
     /**
@@ -136,8 +147,8 @@ namespace minode {
     //% blockId=minode_PIR_istrig block="pir %connName| is triggered"
     //% advanced=true
     //% shim=minode::PIRIsTriggered
-    export function PIRIsTriggered(connName: ConnName): boolean{
-      return true;
+    export function PIRIsTriggered(connName: ConnName): boolean {
+        return true;
     }
 
     /**
@@ -146,8 +157,8 @@ namespace minode {
     //% blockId=minode_on_MIC_level_change block="mic %connName| on noise"
     //% shim=minode::onMICEvent
     //% advanced=true
-    export function onMICEvent(connName: AnalogConnName, body: () => void): void{
-    	return;
+    export function onMICEvent(connName: AnalogConnName, body: () => void): void {
+        return;
     }
 
     /**
@@ -155,8 +166,8 @@ namespace minode {
      */
     //% blockId=minode_on_LightSensor_CHANGE block="light %connName| on change"
     //% shim=minode::onLightSensorEvent
-    export function onLightSensorEvent(connName: AnalogConnName, body: () => void): void{
-    	return;
+    export function onLightSensorEvent(connName: AnalogConnName, body: () => void): void {
+        return;
     }
 
     /**
@@ -164,18 +175,17 @@ namespace minode {
      */
     //% blockId=minode_LightSensor_GET_light_level block="light %connName| get level"
     //% shim=minode::LightSensorGetLevel
-    export function LightSensorGetLevel(connName: AnalogConnName): number{
-      return 0;
+    export function LightSensorGetLevel(connName: AnalogConnName): number {
+        return 0;
     }
 
     /**
      * control the motor speed (0 to 100)
      */
     //% blockId=minode_motor_control1 block="fan %connName| speed %speed"
-    export function FanControl_1(connName:AnalogConnName , speed:number): void
-    {
-      speed *= 200;
-      pins.servoSetPulse(getanalogPin(connName),speed);
+    export function FanControl_1(connName: AnalogConnName, speed: number): void {
+        speed *= 200;
+        pins.servoSetPulse(getanalogPin(connName), speed);
     }
 
     /**
@@ -183,30 +193,27 @@ namespace minode {
      */
     //% blockId=minode_relay_control block="relay %connName| set %status"
     //% advanced=true
-    export function RelayControl(connName:ConnName , status:FanStatus): void
-    {
-      if(getPinProperty(connName) == 1)
-      {
-        switch(status) {
-            case 1:
-                pins.analogWritePin(getPin(connName),1023);
-              break;
-            case 2:
-                pins.analogWritePin(getPin(connName),0);
-              break;
+    export function RelayControl(connName: ConnName, status: FanStatus): void {
+        if (getPinProperty(connName) == 1) {
+            switch (status) {
+                case 1:
+                    pins.analogWritePin(getPin(connName), 1023);
+                    break;
+                case 2:
+                    pins.analogWritePin(getPin(connName), 0);
+                    break;
+            }
         }
-      }
-      else
-      {
-        switch(status) {
-            case 1:
-                pins.digitalWritePin(getPin(connName),1);
-              break;
-            case 2:
-                pins.digitalWritePin(getPin(connName),0);
-              break;
+        else {
+            switch (status) {
+                case 1:
+                    pins.digitalWritePin(getPin(connName), 1);
+                    break;
+                case 2:
+                    pins.digitalWritePin(getPin(connName), 0);
+                    break;
+            }
         }
-      }
 
     }
 

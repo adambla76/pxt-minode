@@ -98,6 +98,12 @@ void MiNodeRGB::setRGB(uint8_t r,uint8_t g,uint8_t b)
   rgbWrite(r,g,b);
 }
 
+void MiNodeRGB::setHSL(uint8_t h,uint8_t s,uint8_t l)
+{
+  //rgbWrite(r,g,b);
+}
+
+
 void MiNodeRGB::rgbWrite(uint8_t r,uint8_t g,uint8_t b)
 {
   uint32_t rgb = 0;
