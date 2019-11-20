@@ -100,7 +100,43 @@ void MiNodeRGB::setRGB(uint8_t r,uint8_t g,uint8_t b)
 
 void MiNodeRGB::setHSL(uint8_t h,uint8_t s,uint8_t l)
 {
-  //rgbWrite(r,g,b);
+        div_t dt; 
+        h = round(h);
+        s = round(s);
+        l = round(l);
+        
+        h = h % 360;
+        dt = div((((100 - abs(2 * l - 100)) * s) << 8), 10000); //chroma, [0,255]
+        int c = dt.quot;
+        dt =  div(h, 60);//[0,6]
+        int  h1 = dt.quot;
+        dt = div((h - h1 * 60) * 256, 60);//[0,255]
+        int  h2 = dt.quot;
+        int  temp = abs((((h1 % 2) << 8) + h2) - 256);
+        int  x = (c * (256 - (temp))) >> 8;//[0,255], second largest component of this color
+        int  r$;
+        int  g$;
+        int  b$;
+        if (h1 == 0) {
+            r$ = c; g$ = x; b$ = 0;
+        } else if (h1 == 1) {
+            r$ = x; g$ = c; b$ = 0;
+        } else if (h1 == 2) {
+            r$ = 0; g$ = c; b$ = x;
+        } else if (h1 == 3) {
+            r$ = 0; g$ = x; b$ = c;
+        } else if (h1 == 4) {
+            r$ = x; g$ = 0; b$ = c;
+        } else if (h1 == 5) {
+            r$ = c; g$ = 0; b$ = x;
+        }
+        dt = div((l * 2 << 8), 100);     
+        dt = div((dt.quot - c), 2);
+        int  m = dt.quot;
+        uint8_t  r = r$ + m;
+        uint8_t  g = g$ + m;
+        uint8_t  b = b$ + m;
+        rgbWrite(r,g,b);   
 }
 
 
