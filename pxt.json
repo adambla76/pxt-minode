@@ -1,6 +1,6 @@
 {
     "name": "minode",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "description": "mi:node IoT Starter Kit - A micro:bit accessories Kit with 10 sensor modules for IoT node applications",
     "license": "MIT",
     "dependencies": {
