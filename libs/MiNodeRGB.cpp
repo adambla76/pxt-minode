@@ -98,12 +98,18 @@ void MiNodeRGB::setRGB(uint8_t r,uint8_t g,uint8_t b)
   rgbWrite(r,g,b);
 }
 
-void MiNodeRGB::setHSL(uint8_t h,uint8_t s,uint8_t l)
+void MiNodeRGB::setHSL(uint16_t h,uint8_t s,uint8_t l)
 {
         div_t dt; 
         h = round(h);
+        
         s = round(s);
+        if(s>99) s=99;
+        if(s<0) s=0;
+
         l = round(l);
+        if(l>99) l=99;
+        if(l<0) l=0;
         
         h = h % 360;
         dt = div((((100 - abs(2 * l - 100)) * s) << 8), 10000); //chroma, [0,255]
@@ -136,7 +142,7 @@ void MiNodeRGB::setHSL(uint8_t h,uint8_t s,uint8_t l)
         uint8_t  r = r$ + m;
         uint8_t  g = g$ + m;
         uint8_t  b = b$ + m;
-        rgbWrite(r,g,b);   
+        rgbWrite(r,g,b);  
 }
 
 

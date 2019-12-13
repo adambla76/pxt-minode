@@ -54,6 +54,9 @@ namespace minode {
        * Converts HSL channels into a RGB color.
        */
     //% blockId=minode_hsl_setcolor block="hsl led %connName| set hue %hue| saturation %satur| lightness %light"
+    //% hue.min=0 hue.max=359
+    //% satur.defl=99 satur.min=0 satur.max=99
+    //% light.defl=50 light.min=0 light.max=99
     //% advanced=true
     //% shim=minode::HSLSetColor
     export function HSLSetColor(connName: ConnName, hue: number, satur: number, light: number): void {
